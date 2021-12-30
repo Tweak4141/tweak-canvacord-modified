@@ -1,0 +1,26 @@
+{
+	"name": "@canvacord/utils",
+	"version": "1.0.0",
+	"description": "Utility package for canvacord",
+	"main": "lib/index.js",
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/DevSnowflake/canvacord",
+		"directory": "packages/utils"
+	},
+	"keywords": [],
+	"author": "DevAndromeda <devandromeda@snowflakedev.org>",
+	"license": "GPL-3.0",
+	"dependencies": {
+		"canvas": "^2.8.0",
+		"moment": "^2.29.1",
+		"twemoji-parser": "^13.1.0"
+	},
+	"devDependencies": {
+		"@types/twemoji-parser": "^13.1.1",
+		"tslib": "^2.3.1"
+	}
+}
