@@ -172,13 +172,13 @@ class Rank {
         if (!fontArray.length) {
             setTimeout(() => {
                 // default fonts
-                Canvas.registerFont(assets.font.get("MANROPE_BOLD"), {
+                Canvas.registerFont(assets("FONT").MANROPE_BOLD, {
                     family: "Manrope",
                     weight: "bold",
                     style: "normal"
                 });
 
-                Canvas.registerFont(assets.font.get("MANROPE_REGULAR"), {
+                Canvas.registerFont(assets("FONT").MANROPE_REGULAR, {
                     family: "Manrope",
                     weight: "regular",
                     style: "normal"
@@ -545,7 +545,7 @@ class Rank {
         ctx.font = `bold 30px ${ops.fontX}`;
         ctx.fillStyle = this.data.requiredXP.color;
         ctx.textAlign = "start";
-        ctx.fillText("/ " + Util.toAbbrev(this.data.requiredXP.data), 670 + ctx.measureText(Util.toAbbrev(this.data.currentXP.data)).width + 15, 164);
+        ctx.fillText("/ " + Util.toAbbrev(this.data.requiredXP.data) + "  XP", 670 + ctx.measureText(Util.toAbbrev(this.data.currentXP.data)).width + 15, 164);
         
         ctx.fillStyle = this.data.currentXP.color;
         ctx.fillText(Util.toAbbrev(this.data.currentXP.data), 670, 164);
@@ -604,21 +604,7 @@ class Rank {
         ctx.drawImage(avatar, 35, 45, this.data.avatar.width + 20, this.data.avatar.height + 20);
         ctx.restore();
 
-        // draw status
-        if (!!this.data.status.circle) {
-            ctx.beginPath();
-            ctx.fillStyle = this.data.status.color;
-            ctx.arc(215, 205, 20, 0, 2 * Math.PI);
-            ctx.fill();
-            ctx.closePath();
-        } else if (!this.data.status.circle && this.data.status.width !== false) {
-            ctx.beginPath();
-            ctx.arc(135, 145, 100, 0, Math.PI * 2, true);
-            ctx.strokeStyle = this.data.status.color;
-            ctx.lineWidth = this.data.status.width;
-            ctx.stroke();
-        }
-
+        // draw status-removedbytweak
         return canvas.toBuffer();
     }
 
