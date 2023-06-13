@@ -508,15 +508,15 @@ class Rank {
         !this.data.renderEmojis ? ctx.fillText(`${name}`, 257 + 18.5, 164) : await Util.renderEmoji(ctx, name, 257 + 18.5, 164);
 
         // draw discriminator
-        if (!this.data.discriminator.discrim) throw new Error("Missing discriminator!");
-        const discrim = `${this.data.discriminator.discrim}`;
-        if (discrim) {
-            ctx.font = `36px ${ops.fontY}`;
-            ctx.fillStyle = this.data.discriminator.color;
-            ctx.textAlign = "center";
-            ctx.fillText(`#${discrim.substr(0, 4)}`, ctx.measureText(name).width + 20 + 335, 164);
+        if (this.data.discriminator.discrim) {
+            const discrim = `${this.data.discriminator.discrim}`;
+            if (discrim) {
+                ctx.font = `36px ${ops.fontY}`;
+                ctx.fillStyle = this.data.discriminator.color;
+                ctx.textAlign = "center";
+                ctx.fillText(`#${discrim.substr(0, 4)}`, ctx.measureText(name).width + 20 + 335, 164);
+            }
         }
-
         // fill level
         if (this.data.level.display && !isNaN(this.data.level.data)) {
             ctx.font = `bold 36px ${ops.fontX}`;
