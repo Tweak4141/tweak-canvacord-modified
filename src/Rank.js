@@ -502,7 +502,7 @@ class Rank {
         ctx.font = `bold 36px ${ops.fontX}`;
         ctx.fillStyle = this.data.username.color;
         ctx.textAlign = "start";
-        const name = Util.shorten(this.data.username.name, 20);
+        const name = Util.shorten(this.data.username.name, 18);
 
         // apply username
         !this.data.renderEmojis ? ctx.fillText(`${name}`, 257 + 18.5, 164) : await Util.renderEmoji(ctx, name, 257 + 18.5, 164);
