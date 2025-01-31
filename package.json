@@ -48,9 +48,9 @@
   },
   "homepage": "https://canvacord.js.org",
   "dependencies": {
-    "@canvacord/assets": "^2.0.5",
+    "@canvacord/assets": "^2.1.0",
     "@canvacord/emoji-parser": "^1.0.1",
-    "canvas": "^2.8.0",
+    "canvas": "^3.1.0",
     "gifencoder": "^2.0.1",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2"
